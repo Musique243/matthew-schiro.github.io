@@ -14,5 +14,5 @@
 11) choose project to install
 
 git add -A
-git commit -m
+git commit -m 'description'
 git push
