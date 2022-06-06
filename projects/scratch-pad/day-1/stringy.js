@@ -58,8 +58,9 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-    // return a string that is dash-case //
-    return string.toDashCase();
+    // return a string that is dash-case & lower case //
+    return string.replace(/\s/g, "-").toLowerCase();
+    
 
     // YOUR CODE ABOVE HERE //
 }
