@@ -151,8 +151,8 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    return longest(stringOne, stringTwo);
-
+    // return longest of the two strings //
+    return stringOne.length > stringTwo.length ? stringOne : stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
