@@ -80,8 +80,7 @@ function toDashCase(string) {
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
     // return true if string begins with the character, false otherwise //
-    var str1 = "Hello"
-    str1.beginsWith("H");
+    
 
     
 
@@ -134,9 +133,10 @@ function concat(stringOne, stringTwo) {
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // return all strings joined together//
     var args = Array.from(arguments);
-
-
+    return args.join("");
+    
     // YOUR CODE ABOVE HERE //
 }
 
@@ -151,7 +151,7 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    return longest(stringOne, stringTwo);
 
 
     // YOUR CODE ABOVE HERE //
@@ -166,7 +166,7 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+  
 
 
     // YOUR CODE ABOVE HERE //
