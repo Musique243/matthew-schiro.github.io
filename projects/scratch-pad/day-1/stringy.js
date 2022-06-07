@@ -188,7 +188,14 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    // return 1 if first is lower, return -1 if second is lower, return 0 if equal //
+    if (stringOne > stringTwo) {
+        return 1;
+    }else if (stringOne < stringTwo) {
+        return -1;
+    }else if (stringOne === stringTwo) {
+        return 0;
+    }
 
 
 
