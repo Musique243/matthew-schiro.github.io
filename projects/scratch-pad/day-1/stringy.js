@@ -79,6 +79,9 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
+    // return true if string begins with the character, false otherwise //
+    var str1 = "Hello"
+    str1.beginsWith("H");
 
     
 
@@ -112,7 +115,8 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    // //
+    return stringOne.concat(stringTwo);
 
 
     // YOUR CODE ABOVE HERE //
