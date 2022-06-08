@@ -87,7 +87,9 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
+  for (var key in object) {
+    console.log(object[key]);
+  }
   
   
   
