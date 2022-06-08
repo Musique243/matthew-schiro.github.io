@@ -106,6 +106,12 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
+    if(string[string.length-1].toLowerCase() === char.toLowerCase()) {
+        return true;
+    }else{
+        return false;
+    }
+
 
 
 
