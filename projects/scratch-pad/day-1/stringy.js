@@ -81,7 +81,7 @@ function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
     // return true if string begins with the character, false otherwise //
     
-    if(string.toLowerCase() === char.toLowerCase() {
+    if(string[0].toLowerCase() === char.toLowerCase()){
         return true;
     }else{
         return false;

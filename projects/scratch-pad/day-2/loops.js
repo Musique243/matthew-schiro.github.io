@@ -103,6 +103,9 @@ function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
   
+
+  }
+ 
   
   
   // YOUR CODE ABOVE HERE //
