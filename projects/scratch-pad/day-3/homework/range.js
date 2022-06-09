@@ -23,6 +23,7 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    var output = [];
     
     
     

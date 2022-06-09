@@ -101,11 +101,12 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
+  var count = 0;
   for (var key in object){
-  return object[key].length;
+    count += 1;
   }
  
-  
+  return count;
   
   // YOUR CODE ABOVE HERE //
 }
