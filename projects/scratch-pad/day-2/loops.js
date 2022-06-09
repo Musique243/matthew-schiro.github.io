@@ -13,11 +13,11 @@
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
 
-for (var i = 0; i < array.Length-1; i++) {
+for (var i = 0; i < array.Length; i++) {
     console.log(array[i]);
   
 }
-  console.log(printArrayValues(array[i]));
+  
   
   
   // YOUR CODE ABOVE HERE //
@@ -101,10 +101,9 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-
-  
+  for (var key in object){
+  return object[key].length;
+  }
  
   
   
