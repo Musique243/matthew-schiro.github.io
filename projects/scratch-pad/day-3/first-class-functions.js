@@ -66,7 +66,13 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string) {
+        if(string[string.length-1].toLowerCase() === endsWith.toLowerCase()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
     
     

@@ -120,8 +120,13 @@ function printObjectValuesInReverse(object) {
   var output = [];
   for (var key in object){
     output.push(object[key]);
-     }
-      console.log(output.reverse());
+  }
+   for (var i = output.length-1; i >= 0; i--) {
+      console.log(output[i]);
+     
+  }
+  
+      
   
   
   
