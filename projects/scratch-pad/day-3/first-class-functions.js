@@ -88,8 +88,15 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    // collect the results in an array //
+    var results = [];
+    // iterate over the string //
+    // pass each string to the modify function //
+    for (var i = 0; i < strings.length; i++) {
+        results.push(modify(strings[i]));
     
-    
+    }
+        return results;
     
     
     // YOUR CODE ABOVE HERE //
@@ -106,6 +113,15 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    for (var i = 0; i < strings.length; i++) {
+        if(test(strings[i]) === false) {
+            return false;
+        }else{
+            return true;
+        }
+        
+       
+    }
     
     
     
