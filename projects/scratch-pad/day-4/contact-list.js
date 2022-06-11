@@ -35,6 +35,17 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    var object = {};
+    
+    object.id = id;
+    object.nameFirst = nameFirst;
+    object.nameLast = nameLast;
+
+    return object;
+
+    function printAllContactNames() {
+        return console.log(printAllContactNames(fullNames));
+    }
 
 } 
 
@@ -53,12 +64,24 @@ function makeContactList() {
         addContact: function(contact) {
             contacts.push(contact);
         },
-        find contact: function(fullName) {
+        findContact: function(fullName) {
+            for(var i = 0; i < contacts.length; i++) {
+            if(contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName) {
+                return contacts[i];
+            }
             
+        }
+        return undefined;
+    },
+    removeContact: function(contact) {
+        for (var i = 0; i < contacts.length; i++) {
+            if(contacts[i] === contact) {
+                return contacts.splice(i, 1);
+            }
         }
     }
 }
-
+}
 
 
 
