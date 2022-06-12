@@ -43,9 +43,7 @@ function makeContact(id, nameFirst, nameLast) {
 
     return object;
 
-    function printAllContactNames() {
-        return console.log(printAllContactNames(fullNames));
-    }
+    
 
 } 
 
@@ -78,6 +76,14 @@ function makeContactList() {
             if(contacts[i] === contact) {
                 return contacts.splice(i, 1);
             }
+        }
+    },
+    printAllContactNames: function(fullName) {
+        for (var i = 0; i < contacts.length; i++) {
+            if(contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName) {
+                return contacts[i].join('\n');
+            }
+        
         }
     }
 }
