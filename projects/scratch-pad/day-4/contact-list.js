@@ -78,16 +78,17 @@ function makeContactList() {
             }
         }
     },
-    printAllContactNames: function(fullName) {
+    printAllContactNames: function() {
+        var output = [];
         for (var i = 0; i < contacts.length; i++) {
-            if(contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName) {
-                return contacts[i].join('\n');
+            output.push(contacts[i]);    
+            
             }
-        
+            return output.join('\n');
         }
     }
 }
-}
+
 
 
 

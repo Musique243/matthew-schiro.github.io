@@ -117,11 +117,11 @@ function allStringsPass(strings, test) {
     for (var i = 0; i < strings.length; i++) {
        if(test(strings[i]) === false) {
            return false;
-        }else{
+        }
            
        }
         
-        }
+    
     
         return true;
     
