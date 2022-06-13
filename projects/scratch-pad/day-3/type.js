@@ -93,9 +93,9 @@ function typeOf(value) {
         return 'null';
     }else if(value instanceof Date === true) {
         return 'date';
-    }
+    }else{
     return typeof(value);
-    
+    }
     
     
     // YOUR CODE ABOVE HERE //

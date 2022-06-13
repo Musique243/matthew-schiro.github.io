@@ -113,17 +113,17 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+  
     for (var i = 0; i < strings.length; i++) {
-        if(test(strings[i]) === false) {
-            return false;
+       if(test(strings[i]) === false) {
+           return false;
         }else{
-            return true;
-        }
+           
+       }
         
-       
-    }
+        }
     
-    
+        return true;
     
     
     // YOUR CODE ABOVE HERE //
