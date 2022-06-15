@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////////////////////
 var animal = {};
 animal.species = 'canine';
-animal['name'] = 'spot';
+animal['name'] = 'Spot';
 animal.noises = [];
 console.log(animal);
 

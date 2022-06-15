@@ -29,7 +29,7 @@ function search(animals, string) {
 function replace(animals, name, replacement) {
     for (var i = 0; i < animals.length; i++) {
         if (animals[i].name === name) {
-            return animals[i].replace(name, replacement);
+            return animals[i] = replacement;
         }
     }
 }
