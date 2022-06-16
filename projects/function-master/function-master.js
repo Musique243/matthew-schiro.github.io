@@ -77,6 +77,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+    object.name;
+    return 'Welcome' + ' ' + object.name + '!';
 
 }
 
