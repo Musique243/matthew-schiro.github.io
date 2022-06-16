@@ -14,22 +14,22 @@ var hour = 10;
 if(hour < 18) {
   console.log("Good Day");
 };
-/*prints Good Day to the console because the condition (hour < 18) is true, therfore the console.log statement is executed. 
-*/
+// Prints Good Day to the console because the condition (hour < 18) is true, therfore the console.log statement is executed. //
+
 
 // 2. Else-if Statement //
-/* Used to specify a new condition to test if the first if statement is false.
-*/
+// Used to specify a new condition to test if the first if statement is false. //
+
 var hour = 20;
 if(hour < 18) {
   console.log("Good Day");
 }else if (hour > 18) {
   console.log("Good Evening");
 };
-//prints Good Evening
+// Prints Good Evening //
 
 // 3. Else Statement //
-// Usually runs when the default statement is false.//
+// Usually runs when the default statement is false. //
 var hour = 20;
   if(hour < 10) {
   console.log("Good Morning");
@@ -38,11 +38,11 @@ var hour = 20;
   }else{
   console.log("Good Evening")
   }
-// prints Good Evening
+// Prints Good Evening //
 
 // 4. Switch Statement //
-/* Evaluates an expression and then tries to find a matching case clause
-*/
+// Evaluates an expression and then tries to find a matching case clause. //
+
 var color = "blue";
 switch (color) {
   case "yellow":
@@ -55,4 +55,4 @@ switch (color) {
     console.log("color chosen not allowed");
     break;
 }
-// prints color chosen not allowed
+// Prints color chosen not allowed //
