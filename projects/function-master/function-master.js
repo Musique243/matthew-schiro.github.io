@@ -95,8 +95,10 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-    if (object.noises) {
+    if (object.noises && object.noises[0]) {
         return object.noises.join(" ");
+    }else {
+        return "there are no noises";
     }
 
 }
@@ -106,6 +108,11 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+    if (string.indexOf(word) >=0) {
+        return true;
+    }else{
+        return false;
+    }
 
 }
 
@@ -114,6 +121,9 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
+    friends = [];
+    object.friends.push(name);
+    return object;
 
 }
 
@@ -122,7 +132,13 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+    for (var i = 0; i < object.friends.length; i++) {
+    if(object.friends[i] === name) {
+    return true;
 
+   }
+} 
+return false;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -130,7 +146,26 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+    var list = [];
+    var output = [];
+    var current = null;
+    for (var i = 0; i < array.length; i++) {
+        if (name === array[i].name) {
+            current = array[i];
+        }else {
+            list.push(array[i].name);
+        }
 
+    }
+    if (current === null) {
+        return list;
+    }
+    for (var i = 0; i < list.length; i++) {
+        if(current.friends.indexOf(list[i]) == -1) {
+            output.push(list[i]);
+        }
+    }
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -152,7 +187,7 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    object.splice(array,1);
 }
 
 //////////////////////////////////////////////////////////////////////
