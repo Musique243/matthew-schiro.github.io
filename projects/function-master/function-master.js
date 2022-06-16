@@ -77,8 +77,7 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-    object.name;
-    return 'Welcome' + ' ' + object.name + '!';
+    return 'Welcome' + ' ' + capitalizeWord(object.name) + '!';
 
 }
 
@@ -87,6 +86,7 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
+    return capitalizeWord(object.name) + " " + "is a " + capitalizeWord(object.species);
 
 }
 
@@ -95,6 +95,9 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    if (object.noises) {
+        return object.noises.join(" ");
+    }
 
 }
 
@@ -135,6 +138,12 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+    if (object.key) {
+
+    } 
+    return Object.keys(object)[0];
+    
+         
 
 }
 
@@ -151,6 +160,9 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+    let s = new Set(array);
+    let it = s.values();
+    return Array.from(it);
 
 }
 
