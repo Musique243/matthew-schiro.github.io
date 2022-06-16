@@ -3,9 +3,9 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
+function triangles(i) {
   
-  for (var tri = "#"; tri.length; tri += "#") {
+  for (var tri = "#"; tri.length <= i; tri += "#") {
     console.log(tri);
   }
    
@@ -19,7 +19,7 @@ function triangles() {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  for (var i = 1; i <= 100; i++) {
+  for (var i = 1; i <= 15; i++) {
     if (i % 15 === 0) {
       console.log('fizzbuzz');
     }else if (i % 3 === 0) {
