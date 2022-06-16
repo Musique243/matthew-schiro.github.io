@@ -104,7 +104,7 @@ var friends = [];
 // chose array because we want a list format
 
 function getRandom(animals) {
-  return animals[Math.floor(Math.random()*animals.length-1)];
+  return animals[Math.floor(Math.random()*animals.length)];
 }
 
 var randomIndex = getRandom(animals);
