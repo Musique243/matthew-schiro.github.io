@@ -132,13 +132,15 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+    if(Array.isArray(object.friends) && object.hasOwnProperty("friends")) {
     for (var i = 0; i < object.friends.length; i++) {
-    if(object.friends[i] === name) {
+    if (object.friends[i] === name) {
     return true;
-
    }
+}  
 } 
-return false;
+        return false;
+
 }
 
 //////////////////////////////////////////////////////////////////////
