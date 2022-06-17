@@ -173,10 +173,7 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-    if (object.key) {
-
-    } 
-    return Object.keys(object)[0];
+object.key.value.push(object);
     
          
 
