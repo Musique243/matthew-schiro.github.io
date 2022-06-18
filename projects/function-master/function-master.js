@@ -175,18 +175,25 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-object.key.value = value;
-    
-         
+   object[key] = value;
+   return object;
+    }
 
-}
+       
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-    object.splice(array,1);
+    for (var i = 0; i < array.length; i++) {
+        if(object.hasOwnProperty(array[i])) {
+            delete object[array[i]];
+        }
+    }
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
