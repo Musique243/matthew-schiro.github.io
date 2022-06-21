@@ -120,6 +120,17 @@ _.first = function(array, number) {
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(array, number) {
+    if(number === null || typeof number !== "number") {
+        return array[array.length-1];
+    }else if(number < 0 || Array.isArray(value) === false) {
+        return [];
+    }else if(number > array.length) {
+        return array;
+    }
+        
+}
+
 
 /** _.indexOf
 * Arguments:
@@ -137,6 +148,9 @@ _.first = function(array, number) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value) {
+
+}
 
 /** _.contains
 * Arguments:
@@ -152,6 +166,10 @@ _.first = function(array, number) {
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
+
+_.contains = function(array, value) {
+    
+}
 
 
 /** _.each
