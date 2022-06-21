@@ -95,6 +95,8 @@ _.first = function(array, number) {
         return [];
     }else if(number > array.length) {
         return array;
+    }else{
+        return array.slice(0, number);
     }
 
     
@@ -121,12 +123,16 @@ _.first = function(array, number) {
 */
 
 _.last = function(array, number) {
-    if(number === null || typeof number !== "number") {
-        return array[array.length-1];
-    }else if(number < 0 || Array.isArray(value) === false) {
+    if(Array.isArray(value) === false) {
+        return [];
+    }else if(isNaN(number)) {
+        return array[arraylength-1];
+    }else if(number < 0) {
         return [];
     }else if(number > array.length) {
         return array;
+    }else{
+        return array.slice(number - 1, array.length)
     }
         
 }
@@ -149,7 +155,17 @@ _.last = function(array, number) {
 */
 
 _.indexOf = function(array, value) {
-
+    for (var i = 0; i < array.length; i++) {
+        if((array[i]) === value) {
+            return i;
+        } 
+        
+        
+            
+       
+    }
+    
+return -1;
 }
 
 /** _.contains
@@ -168,6 +184,7 @@ _.indexOf = function(array, value) {
 */
 
 _.contains = function(array, value) {
+
     
 }
 
@@ -300,6 +317,10 @@ _.contains = function(array, value) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+
+_.every = function(collection, func) {
+
+}
 
 
 /** _.some
