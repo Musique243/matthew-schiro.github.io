@@ -123,7 +123,7 @@ _.first = function(array, number) {
 */
 
 _.last = function(array, number) {
-    if(Array.isArray(value) === false) {
+    if(Array.isArray(array) === false) {
         return [];
     }else if(isNaN(number)) {
         return array[arraylength-1];
@@ -184,7 +184,11 @@ return -1;
 */
 
 _.contains = function(array, value) {
-
+    var containsVal = false;
+    for (var i = 0; i < array.length; i++) {
+        array[i] === value ? containsVal = true : containsVal;
+    }
+  return containsVal;
     
 }
 
@@ -205,6 +209,20 @@ _.contains = function(array, value) {
 *      -> should log "a" "b" "c" to the console
 */
 
+.each = function(collection, func) {
+ if(Array.isArray(collection)) {
+    for (var i = 0; i < collection.length; i++) {
+        func(collection[i], i, collection);
+    } 
+
+    
+ }else{
+    for (var key in collection) {
+        func(collection[key], key, collection);
+    }
+ }
+}
+
 
 /** _.unique
 * Arguments:
@@ -216,6 +234,16 @@ _.contains = function(array, value) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+._unique = function(array) {
+   var newArr = [];
+   for (var i = 0; i < array.length; i++) {
+    if(_.indexOf(newArr, array[i]) === -1) {
+        newArr.push(arr[i])
+    }
+   
+   }
+   return newArr;
+}
 
 /** _.filter
 * Arguments:
