@@ -203,12 +203,10 @@ _.contains = function(array, value) {
 */
 
 _.each = function(collection, func) {
- if(Array.isArray(collection)) {
+    if(Array.isArray(collection)) {
     for (var i = 0; i < collection.length; i++) {
         func(collection[i], i, collection);
-    } 
-
-    
+    }   
  }else{
     for (var key in collection) {
         func(collection[key], key, collection);
@@ -227,7 +225,7 @@ _.each = function(collection, func) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-._unique = function(array) {
+_.unique = function(array) {
    var newArr = [];
    for (var i = 0; i < array.length; i++) {
     if(_.indexOf(newArr, array[i]) === -1) {
