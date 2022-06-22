@@ -229,9 +229,8 @@ _.unique = function(array) {
    var newArr = [];
    for (var i = 0; i < array.length; i++) {
     if(_.indexOf(newArr, array[i]) === -1) {
-        newArr.push(arr[i])
-    }
-   
+        newArr.push(array[i])
+    } 
    }
    return newArr;
 }
@@ -337,9 +336,7 @@ _.unique = function(array) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = function(collection, func) {
 
-}
 
 
 /** _.some
