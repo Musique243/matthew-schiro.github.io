@@ -54,8 +54,6 @@ _.typeOf = function(value) {
         return "array";
     }else if (typeof value === "number") {
         return "number";
-    }else if (typeof value === "object" && Array.isArray(value) === false && typeof value !== null && value instanceof Date === false) {
-        return "object";
     }else if (typeof value === "undefined") {
         return "undefined";
     }else if (typeof value === "boolean") {
@@ -64,6 +62,8 @@ _.typeOf = function(value) {
         return "null";
     }else if (typeof value === "function") {
         return "function";
+    }else{
+        return "object";
     }
 
     }
