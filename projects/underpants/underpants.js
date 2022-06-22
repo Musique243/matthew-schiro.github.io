@@ -274,6 +274,15 @@ _.filter = function(array, func) {
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function(array, func) {
+    var rejected = [];
+    for (var i = 0; i < array.length; i++) {
+        if(!func(array[i], i, array)) {
+            rejected.push(array[i]);
+        }
+    }
+    return rejected;
+}
 
 /** _.partition
 * Arguments:
