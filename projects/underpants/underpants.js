@@ -123,20 +123,18 @@ _.first = function(array, number) {
 */
 
 _.last = function(array, number) {
-    if(Array.isArray(array) === false) {
-        return [];
-    }else if(isNaN(number)) {
-        return array[arraylength-1];
+    if(number === null || typeof number !== "number") {
+        return array[array.length-1];
+    }else if(typeof number === "number" && number >= 0 && number < array.length) {
+        return array.splice(number - 1, array.length);
     }else if(number < 0) {
         return [];
     }else if(number > array.length) {
         return array;
-    }else{
-        return array.slice(number - 1, array.length)
+    }else if(Array.isArray(array) !== true) {
+        return [];
     }
-        
-}
-
+    }
 
 /** _.indexOf
 * Arguments:
