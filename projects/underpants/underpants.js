@@ -254,11 +254,9 @@ _.unique = function(array) {
 _.filter = function(array, func) {
     var filtered = []; 
     for (var i = 0; i < array.length; i++) {
-        if(func(array[i])) {
-            func(array[i], i, array);
-            
+        if(func(array[i], i, array)) {
+           filtered.push(array[i]); 
         }      
-   
     }
     return filtered;
 }
