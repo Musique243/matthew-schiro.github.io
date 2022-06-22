@@ -303,6 +303,22 @@ _.reject = function(array, func) {
 }
 */
 
+_.partition = function(array, func) {
+    var arr1 = [];
+    var arr2 = [];
+    var output = [];
+    for (var i = 0; i < array.length; i++) {
+        if(func(array[i], i, array)) {
+            arr1.push(array[i]);
+        }else if(!func(array[i], i, array)) {
+            arr2.push(array[i]);
+        }
+        
+    }
+    output.push(arr1, arr2);
+    return output;
+}
+
 
 /** _.map
 * Arguments:
