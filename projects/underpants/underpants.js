@@ -251,13 +251,14 @@ _.unique = function(array) {
 *   use _.each in your implementation
 */
 
-_.filter = function(array, test) {
-    var filtered = [];
+_.filter = function(array, func) {
+    var filtered = []; 
     for (var i = 0; i < array.length; i++) {
-        if(test(array[i])) {
-            filtered.push(array[i]);
-          
-        }
+        if(func(array[i])) {
+            func(array[i], i, array);
+            
+        }      
+   
     }
     return filtered;
 }
@@ -409,6 +410,20 @@ _.every = function(collection, test) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed) {
+    if(seed === undefined) {
+        var output = array[0];
+        for (var i = 1; i < array.length; i++) {
+            output = func(output, array[i], i, array);
+        }
+    }else{
+        output = seed;
+        for(var i = 0; i < array.length; i++) {
+            output = func(output, array[i], i, array);
+        }
+    }
+    return output;
+}
 
 /** _.extend
 * Arguments:
