@@ -251,6 +251,16 @@ _.unique = function(array) {
 *   use _.each in your implementation
 */
 
+_.filter = function(array, test) {
+    var filtered = [];
+    for (var i = 0; i < array.length; i++) {
+        if(test(array[i])) {
+            filtered.push(array[i]);
+          
+        }
+    }
+    return filtered;
+}
 
 /** _.reject
 * Arguments:
@@ -302,6 +312,13 @@ _.unique = function(array) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func) {
+    newArr = [];
+    for (var i = 0; i < collection.length; i++) {
+
+    }
+}
+
 
 /** _.pluck
 * Arguments:
@@ -336,7 +353,19 @@ _.unique = function(array) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-
+_.every = function(collection, test) {
+    var isFalse = 0;
+    for (var i = 0; i < collection.length; i++) {
+        if(test(collection[i] === false)) {
+            isFalse += 1;
+        }
+    }
+    if(isFalse > 0) {
+        return false;
+    }else{
+        return true;   
+    }
+}
 
 
 /** _.some
