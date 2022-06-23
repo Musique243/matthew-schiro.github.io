@@ -367,6 +367,9 @@ return newArr;
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function(array, property) {
+    
+}
 
 /** _.every
 * Arguments:
