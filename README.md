@@ -27,3 +27,7 @@
 1) in terminal, type => git add -A
 2) in terminal, type => git commit -m "description in quotes"
 3) in terminal, type => git push
+
+### How to test let-s-get-functional
+1) cd into workspace (type cd .. in terminal until terminal reads /workspace)
+2) Copy the code from line 19 in index.js into the terminal

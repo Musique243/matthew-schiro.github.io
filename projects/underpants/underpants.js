@@ -392,17 +392,10 @@ _.pluck = function(array, property) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = function (collection, test) {
+_.every = function (collection, func) {
     var isFalse = 0;
+    if(func === undefined) {
     for (var i = 0; i < collection.length; i++) {
-        if (test(collection[i] === false)) {
-            isFalse += 1;
-        }
-    }
-    if (isFalse > 0) {
-        return false;
-    } else {
-        return true;
     }
 }
 
