@@ -409,18 +409,29 @@ _.every = function (collection, func) {
             return true;
         }else{
             for (var key in collection) {
-                if(!collection[key][i]) {
+                if(!collection[key]) {
                     return false;
                 }
             }
             return true;
         }
-    }else if(Array.isArray(collection)) {
+    }else{
+        if(Array.isArray(collection)) {
         for (var i = 0; i < collection.length; i++) {
-            if(!collection[i]) {
+            if(!func(collection[i])) {
                 return false;
             }
         }
+        return true;
+        }else{
+            for (var key in collection) {
+                if(!collection[key]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+     
     }
 }
 
@@ -453,23 +464,26 @@ _.some = function(collection, func) {
             for (var i = 0; i < collection.length; i++) {
                 if(collection[i]) {
                     return true;    
-                }else{
-                    return false;
                 }
-            }
             
-        }else{
-            for (var i in collection) {
-                if(collection[i][key]) {
-                    return true;
-                }else{
-                    return false;
                 }
+                return false;
             }
+        
+            }else{
+
+            for (var key in collection) {
+                if(collection[key]) {
+                    return true;
+                }
+                    
+            }      
+            }
+            return false;
         }
-    }
     
-}
+    
+
 
 
 /** _.reduce
