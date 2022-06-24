@@ -458,29 +458,54 @@ _.every = function (collection, func) {
 */
 
 _.some = function(collection, func) {
-    var isTrue = 0;
+    //if function if undefined
     if(func === undefined) {
+        //determine if array
         if(Array.isArray(collection)) {
             for (var i = 0; i < collection.length; i++) {
+                //if current value is truthy
                 if(collection[i]) {
                     return true;    
-                }
-            
-                }
-                return false;
+                }   
             }
-        
-            }else{
-
+                return false;
+        }else{
+            //else its an object
             for (var key in collection) {
+                //if current value is truthy
                 if(collection[key]) {
                     return true;
                 }
-                    
-            }      
             }
             return false;
-        }
+        }    
+    }else{
+        //else function is defined
+        if(Array.isArray(collection)) {
+            //determine if array
+            for (var i = 0; i < collection.length; i++) {
+                //determine current value true if passed to function
+                if(func(collection[i], key, collection)) {
+                    return true;
+                }
+            }
+            return false;
+        }else{
+            //else its an object
+            for (var key in collection) {
+                //determine if current value is true if passed to function
+                if(func(collection[key], key, collection)) {
+                    return true;
+                }
+            }
+            return false;
+        }            
+    }
+}
+
+
+    
+
     
     
 
@@ -534,6 +559,13 @@ _.reduce = function (array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(target, ...objects) {
+    for (var i = 0; i < objects.length; i++) {
+        target = Object.assign(target, objects[i]);
+    }
+    return objects;
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
