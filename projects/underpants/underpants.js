@@ -368,7 +368,10 @@ return newArr;
 */
 
 _.pluck = function(array, property) {
-    
+    var result = _.map(array, function(element) {
+        return element[property];
+    });
+    return result;
 }
 
 /** _.every
