@@ -395,10 +395,29 @@ _.pluck = function(array, property) {
 _.every = function (collection, func) {
     var isFalse = 0;
     if(func === undefined) {
-    for (var i = 0; i < collection.length; i++) {
+        if(Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                if(!collection[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }else{
+            for (var key in collection) {
+                if(!collection[key][i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }else if(Array.isArray(collection)) {
+        for (var i = 0; i < collection.length; i++) {
+            if(!collection[i]) {
+                return false;
+            }
+        }
     }
 }
-
 
 /** _.some
 * Arguments:
