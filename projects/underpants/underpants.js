@@ -3,6 +3,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
+const { zip } = ("lodash");
+
 
 
 var _ = {};
@@ -422,6 +424,7 @@ _.every = function (collection, func) {
     }
 }
 
+
 /** _.some
 * Arguments:
 *   1) A collection
@@ -442,6 +445,31 @@ _.every = function (collection, func) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+
+_.some = function(collection, func) {
+    var isTrue = 0;
+    if(func === undefined) {
+        if(Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                if(collection[i]) {
+                    return true;    
+                }else{
+                    return false;
+                }
+            }
+            
+        }else{
+            for (var i in collection) {
+                if(collection[i][key]) {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        }
+    }
+    
+}
 
 
 /** _.reduce
