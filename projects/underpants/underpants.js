@@ -560,11 +560,11 @@ _.reduce = function (array, func, seed) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function(target, ...objects) {
+_.extend = function(obj1, ...objects) {
     for (var i = 0; i < objects.length; i++) {
-        target = Object.assign(target, objects[i]);
+         Object.assign(obj1, objects[i]);
     }
-    return objects;
+    return obj1;
 }
 
 //////////////////////////////////////////////////////////////////////
