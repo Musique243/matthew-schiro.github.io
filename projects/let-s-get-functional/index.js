@@ -22,7 +22,14 @@ var _ = require('underbar');
  */
 
 var maleCount = function(array) {
-
+    var males = _.filter(array, function(customer) {
+        if(customer.gender === "male") {
+            return true;
+        }else{
+            return false;
+        }
+    });
+    return males.length;
 }
 
 
