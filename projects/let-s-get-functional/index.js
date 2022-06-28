@@ -85,13 +85,42 @@ var firstLetterCount = function(array, letter) {
     return total;
 };
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter) {
+    var total = 0;
+    for (var i = 0; i < array.length; i++) {
+        if(array[i].name === customer) {
+            for (var j = 0; j < array[i].friends.length; j++) {
+                if(array[i].friends[j].name[0].toLowerCase() === letter.toLowerCase()) {
+                    total += 1;
+                    
+                }              
+            }
+        }    
+    }    
+    return total;
+};
 
-var friendsCount;
+var friendsCount = function(array, name) {
+    var list = [];
+    for (var i = 0; i < array.length; i++){
+        for (var j = 0; j < array[i].friends.length; i++) {
+            if(array[i].friends[j].name === name) {
+                list.push(array[i]).name;
+            }
+        }
+    }
+    return list;  
+};
 
 var topThreeTags;
 
-var genderCount;
+var genderCount = function(array) {
+    var result = {};
+    var genders = _.reduce(array, function(numGender, customer) {
+
+    }, 0);
+
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
