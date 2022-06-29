@@ -2,18 +2,27 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range(start, end) {
-  var array = [];
-  if(start === end) {
-    return array;
-  }else if (start >= 0){
-    for (var i = start; i <= end; i++) {
-      return i;
-    }
-  }
-  return array;
-}
+function range(start, end, step = 1) {
+  var output = [];
+  for (var i = start; i <= end; i++) {
 
+      if(end < start) {
+        step = -step;
+      
+      }else if(start === end) {
+        return output;
+     
+    } else if(step > 0) {
+      output.push(start);
+      start += step;
+
+    }
+     
+    
+      
+  }
+return output;
+};
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +96,21 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(x, y) {
+  if(typeof x !== 'object' && typeof y !== 'object') {
+    return x === y;
+  }
+  if(typeof x !== 'object' || typeof y !== 'object') {
+    return false;
+  }
+  var xKeys = Object.keys(x);
+  var yKeys = Object.keys(y);
+  for (var i = 0; i < xKeys.length; i++) {
+    if(!yKeys.includes(xKeys[i]) || deepEqual(x[xKeys[i]], y[xKeys[i]])) {
+      return false;
+    }
+  }
+  return true;
 
 }
 
