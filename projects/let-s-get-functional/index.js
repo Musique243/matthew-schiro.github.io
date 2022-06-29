@@ -103,7 +103,7 @@ var friendFirstLetterCount = function(array, customer, letter) {
 var friendsCount = function(array, name) {
     var list = [];
     for (var i = 0; i < array.length; i++){
-        for (var j = 0; j < array[i].friends.length; i++) {
+        for (var j = 0; j < array[i].friends.length; j++) {
             if(array[i].friends[j].name === name) {
                 list.push(array[i]).name;
             }
