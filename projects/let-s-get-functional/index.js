@@ -113,9 +113,9 @@ var friendsCount = function(array, name) {
 };
 
 var topThreeTags = function(array) {
-    allTags = [];
+    var allTags = [];
     for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array[i].tags; j++) {
+        for (let j = 0; j < array[i].tags.length; j++) {
             allTags.push(array[i].tags[j]);
         }
     }
@@ -136,7 +136,7 @@ var topThreeTags = function(array) {
 
     return top3;
 
-}
+};
 
 var genderCount = function(array) {
     var result = {};
