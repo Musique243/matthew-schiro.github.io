@@ -139,12 +139,18 @@ var topThreeTags = function(array) {
 };
 
 var genderCount = function(array) {
-    var result = {};
-    var genders = _.reduce(array, function(numGender, customer) {
-
-    }, 0);
-
-};
+    var genderObj = {female: 0, male: 0, "non-binary": 0};
+    var total = _.reduce(array, function(acc, customer) {
+        if (customer.gender === 'male') {
+            genderObj.male += 1;
+        }else if(customer.gender === "female") {
+            genderObj.female +=1;
+        }else
+        genderObj["non-binary"] += 1;
+        return total;
+    }, 0); 
+    return genderObj;
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
