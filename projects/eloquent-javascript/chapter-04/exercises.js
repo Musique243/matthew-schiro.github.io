@@ -4,22 +4,17 @@
 
 function range(start, end, step = 1) {
   var output = [];
-  for (var i = start; i <= end; i++) {
-
-      if(end < start) {
-        step = -step;
-      
-      }else if(start === end) {
-        return output;
-     
-    } else if(step > 0) {
-      output.push(start);
-      start += step;
-
+  if(start === end) {
+    return output;
+  }
+  if(step > 0) {
+  for (var i = start; i <= end; i += step) {
+      output.push(i);
+    } 
+  }else{
+    for (var i = start; i >= end; i += step) {
+      output.push(i);
     }
-     
-    
-      
   }
 return output;
 };
