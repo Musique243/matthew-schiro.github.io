@@ -183,7 +183,17 @@ var compareStr = function(str1, str2) {
       return true;
     }
   }
-  return compareStr(string.slice(1));
+  if(str2.length === 0) {
+    if(str1.charAt(0) !== "*") {
+      return false;
+    }
+    if(str1.length !== 1) {
+      return matchMedia(str2, str1.substring(1));
+    }else{
+      return true;
+    }
+  }
+  
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -198,12 +208,11 @@ var createArray = function(str, newArr = []){
 };
 
 // 17. Reverse the order of an array
-var reverseArr = function (array, output = []) {
-  if(array.length === 0) {
-    return output;
-  }
-  output.push(array[0]);
-  return reverse(a.slice(1)).concat(array[0]);
+var reverseArr = function (array,) {
+ if(array.length === 0) {
+  return [];
+ }
+  return [array.pop()].concat(reverseArr(array));
 };
 
 
