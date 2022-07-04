@@ -119,6 +119,14 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  if(string.length < 2) {
+    return true;
+  }
+  if(string[0] === string[string.length - 1]) {
+    string.replace(/[^a-z0-9]/i, '').toLowerCase();
+    return palindrome(string.slice(1, string.length - 1));
+  }
+  return false;
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -162,8 +170,18 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
-  if(str1 === str2) {
+  if(str1.length === 0 && str2.length === 0) {
     return true;
+  }
+  if(str1.length === 0) {
+    if(str2.charAt(0) !== '*') {
+      return false;
+    }
+    if(str2.length !== 1) {
+      return compareStr(str1, str2.substring(1));
+    }else{
+      return true;
+    }
   }
   return compareStr(string.slice(1));
 };
