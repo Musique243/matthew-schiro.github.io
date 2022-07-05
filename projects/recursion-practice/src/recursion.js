@@ -174,28 +174,8 @@ var gcd = function(x, y) {
 var compareStr = function(str1, str2) {
   if(str1.length === 0 && str2.length === 0) {
     return true;
-  }
-  if(str1.length === 0) {
-    if(str2.charAt(0) !== '*') {
-      return false;
-    }
-    if(str2.length !== 1) {
-      return compareStr(str1, str2.substring(1));
-    }else{
-      return true;
-    }
-  }
-  if(str2.length === 0) {
-    if(str1.charAt(0) !== "*") {
-      return false;
-    }
-    if(str1.length !== 1) {
-      return matchMedia(str2, str1.substring(1));
-    }else{
-      return true;
-    }
-  }
   
+  }
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -242,16 +222,12 @@ var countOccurrence = function(array, value) {
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
-var rMap = function(array, callback) {
-  const newArr = [];
-  if(array.length <= 0) {
-    return newArr;
+var rMap = function(array, callback, mapped = []) {
+  if(array.length === 0) {
+    return mapped;
   }
-  for(let i = 0; i < array.length; i++) {
-    newArr.push(callback(array[i], i));
-    
-  }
-  return newArr;
+  mapped.push(callback(array[0]));
+  return rMap(array.slice(1), callback, mapped);
   
 };
 
@@ -338,13 +314,13 @@ var flatten = function(arrays) {
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
-var letterTally = function(str, obj) {
+var letterTally = function(str, obj = {}) {
   if(str.length === 0) {
     return obj;
-  }else if(obj[str.charAt(0)]) {
-    obj[str.charAt(0)]++;
+  }else if(obj[str[0]]) {
+    obj[str[0]]++;
   }else{
-    obj[str.charAt(0)] = 1;
+    obj[str[0]] = 1;
   }
   return letterTally(str.slice(1), obj);
 };
