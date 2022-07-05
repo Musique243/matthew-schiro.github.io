@@ -122,11 +122,13 @@ var palindrome = function(string) {
   if(string.length < 2) {
     return true;
   }
-  if(string[0] === string[string.length - 1]) {
-    string.replace(/[^a-z0-9]/i, '').toLowerCase();
-    return palindrome(string.slice(1, string.length - 1));
+  if(string[0].toLowerCase() === string[string.length - 1].toLowerCase()) {
+    string.replace(/\s/g, '');
+    palindrome(string.slice(1, string.length - 1));
+    return true;
   }
   return false;
+ 
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -383,6 +385,10 @@ var minimizeZeroes = function(array) {
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
 var alternateSign = function(array) {
+  if(array.length === 0) {
+    return [];
+  }  
+
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
