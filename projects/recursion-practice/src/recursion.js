@@ -401,7 +401,7 @@ var numToText = function(str, output = '') {
   8: 'eight', 9: 'nine'
   };
 
-  if(str.length = 0) { 
+  if(str.length === 0) { 
     return output;
     
   }
