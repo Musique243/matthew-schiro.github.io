@@ -2,11 +2,13 @@
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function flatten() {
-  let arrays = [[1, 2, 3], [4, 5], [6]];
-const reduced = arrays.reduce((result,array) => result.concat(array), []);
-console.log(reduced);
-};
+function flatten(array) {
+
+  return array.reduce(function (flat, toFlatten) { // return function to reduce array
+    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten); // bring back together using .concat
+  }, []); // seed value = []
+}
+
 
 
 // /////////////////////////////////////////////////////////////////////////////
