@@ -50,7 +50,16 @@ function a() {
   const letter = "C";
 };
 console.log(letter);
-//Prints ball is not defined because it is only available inside the blocked scope.
+//Prints letter is not defined because variable created in the function are only accessible in the function.
+
+
+var a = 2;
+
+if(a === 2) {
+    b = a+2
+}
+console.log(b);
+// Prints 4
 
 // 4. Hoisting
 // Hoisting is when var and function declarations are dragged up to the top of the code line. Scope is the area in the code where variables can be declared. Constants are block scoped, which means they are confined to the code block where they are assigned. Constants are not hoisted to the top of their block of code. Variables used with the let keyword are also not hoisted and are block scoped. //
