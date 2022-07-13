@@ -29,7 +29,7 @@ if(hour < 18) {
 // Prints Good Evening //
 
 // 3. Else Statement //
-// Usually runs when the default statement is false. //
+// The else code block runs if all conditions in the conditional chain are false. //
 var hour = 20;
   if(hour < 10) {
   console.log("Good Morning");
