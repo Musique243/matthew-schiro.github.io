@@ -77,8 +77,8 @@ if(a + b === 3 || b - 1 === 0) {
 // 5. Unary Operators // 
 /* Operators that consider a single operand and perform all the types of operations on that single operand. These types include unary plus, unary minus, not, and type of. For the type of operator, it will return the type of value such as string, boolean, and number. The type of operator will return object for an array and object.
 
-typeof 10;  Prints "number"
-typeof "hello"; Prints "string"
+console.log(typeof 10);  Prints "number"
+console.log(typeof "hello"); Prints "string"
 
 */
 

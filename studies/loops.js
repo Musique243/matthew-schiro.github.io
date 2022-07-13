@@ -5,6 +5,11 @@
 
 // 1. For Loop //
 /* Use for iterating over arrays. These loops use a starting and stopping value with how to either increase or decrease the value.
+ Syntax of a for loop:
+ for(start; stop; update) { // code to run }
+  start: defines a counting variable
+  stop: defines the condition that when false ends the loop
+  update: defines how to increment or decrement the counting variable
 */
 
 var array = [1, 2, 3, 4, 5];
